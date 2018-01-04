@@ -1,0 +1,74 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CDDPagerController (1.1.4)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
+  - IQKeyboardManager (5.0.7)
+  - Masonry (1.1.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.15.1)
+  - PureLayout (3.0.2)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+  - SVProgressHUD (2.2.2)
+  - TZImagePickerController (1.9.8)
+  - YJHomeKit (0.0.3)
+  - ZYCornerRadius (1.0.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - CDDPagerController
+  - FMDB
+  - IQKeyboardManager
+  - Masonry
+  - MJExtension
+  - MJRefresh
+  - PureLayout
+  - SDCycleScrollView
+  - SDWebImage
+  - SVProgressHUD
+  - TZImagePickerController
+  - YJHomeKit (from `../../YJHomeKit`)
+  - ZYCornerRadius
+
+EXTERNAL SOURCES:
+  YJHomeKit:
+    :path: ../../YJHomeKit
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CDDPagerController: 252632078b543e57ca3c052bf1f25759b6c862a6
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  TZImagePickerController: 3b9413ae5d049b1fdc5b0c720ad283f35b679a50
+  YJHomeKit: a5ca3bb7f1cdc3cbd538055aef39093fc7e5b194
+  ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
+
+PODFILE CHECKSUM: 72036b2380474adc85df65eb651e6afbd6a8b927
+
+COCOAPODS: 1.4.0.rc.1
