@@ -199,9 +199,9 @@
                     [tagBottomLabel doBorderWidth:1 color:tagBottomLabel.textColor cornerRadius:3];
                 }
                 
-                CGSize tagTopSize = [NSString yj_calculateRectWithText:firstTagArrray[i] FontSize:self.titleFont - 1 MaxSize:CGSizeMake(MAXFLOAT, RollingViewHeight)];
+                CGSize tagTopSize = [YJTool yj_calculateRectWithText:firstTagArrray[i] FontSize:self.titleFont - 1 MaxSize:CGSizeMake(MAXFLOAT, RollingViewHeight)];
                 
-                CGSize tagBottomSize = [NSString yj_calculateRectWithText:lastTagArray[i] FontSize:self.titleFont - 1 MaxSize:CGSizeMake(MAXFLOAT, RollingViewHeight)];
+                CGSize tagBottomSize = [YJTool yj_calculateRectWithText:lastTagArray[i] FontSize:self.titleFont - 1 MaxSize:CGSizeMake(MAXFLOAT, RollingViewHeight)];
                 
                 tagTopLabel.size = CGSizeMake(tagTopSize.width + 4, tagTopSize.height + 4);
                 tagBottomLabel.size = CGSizeMake(tagBottomSize.width + 4, tagBottomSize.height + 4);
@@ -256,7 +256,7 @@
                     [tagLabel doBorderWidth:1 color:tagLabel.textColor cornerRadius:3];
                 }
                 
-                CGSize tagSize = [NSString yj_calculateRectWithText:self.rolTags[i] FontSize:self.titleFont - 1 MaxSize:CGSizeMake(MAXFLOAT, RollingViewHeight)];
+                CGSize tagSize = [YJTool yj_calculateRectWithText:self.rolTags[i] FontSize:self.titleFont - 1 MaxSize:CGSizeMake(MAXFLOAT, RollingViewHeight)];
             
                 tagLabel.size = CGSizeMake(tagSize.width + 4, tagSize.height + 4);
                 tagLabel.x = 0;

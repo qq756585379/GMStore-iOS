@@ -22,6 +22,7 @@ PODS:
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.1)
+  - PPNumberButton (0.7.0)
   - PureLayout (3.0.2)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
@@ -30,7 +31,8 @@ PODS:
   - SDWebImage/Core (4.2.2)
   - SVProgressHUD (2.2.2)
   - TZImagePickerController (1.9.8)
-  - YJHomeKit (0.0.3)
+  - YJHomeKit (0.0.3):
+    - Masonry
   - ZYCornerRadius (1.0.2)
 
 DEPENDENCIES:
@@ -41,6 +43,7 @@ DEPENDENCIES:
   - Masonry
   - MJExtension
   - MJRefresh
+  - PPNumberButton
   - PureLayout
   - SDCycleScrollView
   - SDWebImage
@@ -61,14 +64,15 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  PPNumberButton: a053cde152b0e683302ce41a4755bfa02e1b3a83
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   TZImagePickerController: 3b9413ae5d049b1fdc5b0c720ad283f35b679a50
-  YJHomeKit: a5ca3bb7f1cdc3cbd538055aef39093fc7e5b194
+  YJHomeKit: fa42f22fca458ab906ac4139b63400e497e93e7d
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 72036b2380474adc85df65eb651e6afbd6a8b927
+PODFILE CHECKSUM: d0dcca09422d03a2f7b29b411cd201ce5ef4d52e
 
 COCOAPODS: 1.4.0.rc.1

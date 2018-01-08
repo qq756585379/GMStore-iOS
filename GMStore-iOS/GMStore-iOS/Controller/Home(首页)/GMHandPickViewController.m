@@ -7,6 +7,7 @@
 //
 
 #import "GMHandPickViewController.h"
+#import "DCCommodityViewController.h"
 #import "GMHomeRefreshGifHeader.h"
 #import "GMExceedApplianceCell.h"
 #import "GMGoodsCountDownCell.h"
@@ -108,8 +109,8 @@
     };
     _topToolView.rightItemClickBlock = ^{
         NSLog(@"点击了首页分类");
-//        DCCommodityViewController *dcComVc = [DCCommodityViewController new];
-//        [weakSelf.navigationController pushViewController:dcComVc animated:YES];
+        DCCommodityViewController *dcComVc = [DCCommodityViewController new];
+        [weakSelf.navigationController pushViewController:dcComVc animated:YES];
     };
     _topToolView.rightRItemClickBlock = ^{
         NSLog(@"点击了首页购物车");
