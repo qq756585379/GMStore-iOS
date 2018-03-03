@@ -172,7 +172,7 @@
     }];
     
     [_topSearchView mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.left.mas_equalTo(_leftItemButton.mas_right)setOffset:5];
+        [make.left.mas_equalTo(_leftItemButton.mas_right) setOffset:5];
         [make.right.mas_equalTo(_rightRItemButton.mas_left)setOffset:5];
         make.height.mas_equalTo(@(32));
         make.centerY.mas_equalTo(_rightRItemButton);

@@ -91,16 +91,11 @@
         make.right.mas_equalTo(_crossButton.mas_left);
         [make.top.mas_equalTo(_goodPriceLabel.mas_bottom)setOffset:5];
     }];
-    
 }
-
 
 - (void)crossButtonClick
 {
-    !_crossButtonClickBlock ?: _crossButtonClickBlock();
+    !_crossButtonClickBlock ? : _crossButtonClickBlock();
 }
-
-#pragma mark - Setter Getter Methods
-
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class DCFeatureList;
+
 @interface DCFeatureItemCell : UICollectionViewCell
 
 /* 内容数据 */

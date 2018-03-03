@@ -87,7 +87,7 @@
 // this is Apple's recommended place for adding/updating constraints
 - (void)updateConstraints
 {
-    CGSize tagSize = [NSString yj_calculateRectWithText:_gridItem.gridTag FontSize:8 MaxSize:CGSizeMake(MAXFLOAT, 30)];
+    CGSize tagSize = [YJTool yj_calculateRectWithText:_gridItem.gridTag FontSize:8 MaxSize:CGSizeMake(MAXFLOAT, 30)];
     [_tagLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_gridImageView.mas_centerX);
         make.top.mas_equalTo(_gridImageView);

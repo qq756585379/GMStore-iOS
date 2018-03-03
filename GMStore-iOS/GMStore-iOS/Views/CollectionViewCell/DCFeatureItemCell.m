@@ -37,7 +37,6 @@
     }];
 }
 
-#pragma mark - Setter Getter Methods
 - (void)setContent:(DCFeatureList *)content
 {
     _content = content;
@@ -48,7 +47,7 @@
         [YJTool yj_chageControlCircularWith:_attLabel AndSetCornerRadius:5 SetBorderWidth:1 SetBorderColor:[UIColor redColor] canMasksToBounds:YES];
     }else{
         _attLabel.textColor = [UIColor blackColor];
-        [YJTool yj_chageControlCircularWith:_attLabel AndSetCornerRadius:5 SetBorderWidth:1 SetBorderColor:[[UIColor lightGrayColor]colorWithAlphaComponent:0.4] canMasksToBounds:YES];
+        [YJTool yj_chageControlCircularWith:_attLabel AndSetCornerRadius:5 SetBorderWidth:1 SetBorderColor:[[UIColor lightGrayColor] colorWithAlphaComponent:0.4] canMasksToBounds:YES];
     }
 }
 

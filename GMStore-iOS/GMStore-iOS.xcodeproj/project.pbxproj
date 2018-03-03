@@ -642,10 +642,13 @@
 		F51AF2B21FF4BE7700F91186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F5D78DED200C6F43002CC473 /* CollectionViewHeader */,
+				F5D78DEC200C6F39002CC473 /* CollectionViewFooter */,
+				F5D78DEB200C6F2C002CC473 /* TableViewFooter */,
+				F5D78DEA200C6F17002CC473 /* TableViewHeader */,
 				F571FCDE1FFF49C1002B7E25 /* CollectionViewCell */,
 				F571FCDA1FFF49A6002B7E25 /* CollectionViewFlowLayout */,
 				F571FCD61FFF4988002B7E25 /* TableViewCell */,
-				F571FCB91FFF4834002B7E25 /* CollectionReusableView */,
 				F5B270971FFBA08600FB7DD9 /* CustionButton */,
 				F51AF2B71FF4BF7100F91186 /* BarView */,
 			);
@@ -785,7 +788,6 @@
 				F571FC951FFF3648002B7E25 /* GoodsFiltrate(商品筛选) */,
 				F571FC851FFF3648002B7E25 /* GoodsParticulars(商品详情) */,
 				F53702F21FFE4593007DF0AA /* View */,
-				F53702E51FFE454D007DF0AA /* Header */,
 				F53702D81FFE452F007DF0AA /* Cell */,
 				F53702D51FFE4418007DF0AA /* DCFootprintGoodsViewController.h */,
 				F53702D21FFE4418007DF0AA /* DCFootprintGoodsViewController.m */,
@@ -828,17 +830,6 @@
 				F53702DE1FFE453B007DF0AA /* DCSwitchGridCell.m */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		F53702E51FFE454D007DF0AA /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				F53702E71FFE454D007DF0AA /* DCBrandsSortHeadView.h */,
-				F53702E61FFE454D007DF0AA /* DCBrandsSortHeadView.m */,
-				F53702EF1FFE4585007DF0AA /* DCCustionHeadView.h */,
-				F53702F01FFE4585007DF0AA /* DCCustionHeadView.m */,
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 		F53702F21FFE4593007DF0AA /* View */ = {
@@ -1061,21 +1052,6 @@
 				F571FCA91FFF3648002B7E25 /* DCGoodCommentViewController.m */,
 			);
 			path = "GoodsComments(商品评论)";
-			sourceTree = "<group>";
-		};
-		F571FCB91FFF4834002B7E25 /* CollectionReusableView */ = {
-			isa = PBXGroup;
-			children = (
-				F571FCBB1FFF4858002B7E25 /* DCDeatilCustomHeadView.h */,
-				F571FCBA1FFF4858002B7E25 /* DCDeatilCustomHeadView.m */,
-				F571FCC41FFF487B002B7E25 /* DCDetailOverFooterView.h */,
-				F571FCC31FFF487B002B7E25 /* DCDetailOverFooterView.m */,
-				F571FCBD1FFF4866002B7E25 /* DCDetailShufflingHeadView.h */,
-				F571FCBE1FFF4866002B7E25 /* DCDetailShufflingHeadView.m */,
-				F571FCC11FFF4870002B7E25 /* DCFeatureHeaderView.h */,
-				F571FCC01FFF4870002B7E25 /* DCFeatureHeaderView.m */,
-			);
-			path = CollectionReusableView;
 			sourceTree = "<group>";
 		};
 		F571FCC61FFF4920002B7E25 /* Models */ = {
@@ -1476,6 +1452,46 @@
 			path = CustionButton;
 			sourceTree = "<group>";
 		};
+		F5D78DEA200C6F17002CC473 /* TableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewHeader;
+			sourceTree = "<group>";
+		};
+		F5D78DEB200C6F2C002CC473 /* TableViewFooter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewFooter;
+			sourceTree = "<group>";
+		};
+		F5D78DEC200C6F39002CC473 /* CollectionViewFooter */ = {
+			isa = PBXGroup;
+			children = (
+				F571FCC41FFF487B002B7E25 /* DCDetailOverFooterView.h */,
+				F571FCC31FFF487B002B7E25 /* DCDetailOverFooterView.m */,
+			);
+			path = CollectionViewFooter;
+			sourceTree = "<group>";
+		};
+		F5D78DED200C6F43002CC473 /* CollectionViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				F571FCC11FFF4870002B7E25 /* DCFeatureHeaderView.h */,
+				F571FCC01FFF4870002B7E25 /* DCFeatureHeaderView.m */,
+				F571FCBD1FFF4866002B7E25 /* DCDetailShufflingHeadView.h */,
+				F571FCBE1FFF4866002B7E25 /* DCDetailShufflingHeadView.m */,
+				F571FCBB1FFF4858002B7E25 /* DCDeatilCustomHeadView.h */,
+				F571FCBA1FFF4858002B7E25 /* DCDeatilCustomHeadView.m */,
+				F53702EF1FFE4585007DF0AA /* DCCustionHeadView.h */,
+				F53702F01FFE4585007DF0AA /* DCCustionHeadView.m */,
+				F53702E71FFE454D007DF0AA /* DCBrandsSortHeadView.h */,
+				F53702E61FFE454D007DF0AA /* DCBrandsSortHeadView.m */,
+			);
+			path = CollectionViewHeader;
+			sourceTree = "<group>";
+		};
 		F5EC1D2A1FF60620009EDE5D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1704,7 +1720,8 @@
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
-				"${PODS_ROOT}/../../../YJHomeKit/YJHomeKit/ShareView/RefreshHeader/RefreshHeaderImg.bundle",
+				"${PODS_ROOT}/../../../YJHomeKit/YJHomeKit/Views/ShareView/RefreshHeader/RefreshHeaderImg.bundle",
+				"${PODS_ROOT}/../../../YJHomeKit/YJHomeKit/Views/VideoPlayer/YJPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1713,6 +1730,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RefreshHeaderImg.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YJPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -79,7 +79,7 @@
     
     [_gridImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self);
-        [make.left.mas_equalTo(self)setOffset:DCMargin * 2];
+        [make.left.mas_equalTo(self) setOffset:DCMargin * 2];
         make.size.mas_equalTo(CGSizeMake(90, 90));
     }];
     
@@ -94,7 +94,6 @@
         [make.right.mas_equalTo(self)setOffset:-DCMargin];
     }];
     
-    
     [_freeSuitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_autotrophyImageView);
         [make.top.mas_equalTo(_gridLabel.mas_bottom)setOffset:2];
@@ -107,7 +106,7 @@
     
     [_commentNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_autotrophyImageView);
-        [make.top.mas_equalTo(_priceLabel.mas_bottom)setOffset:2];
+        [make.top.mas_equalTo(_priceLabel.mas_bottom) setOffset:2];
     }];
     
     [_colonButton mas_makeConstraints:^(MASConstraintMaker *make) {

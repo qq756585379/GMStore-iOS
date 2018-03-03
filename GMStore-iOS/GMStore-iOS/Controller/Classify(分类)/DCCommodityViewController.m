@@ -104,7 +104,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
     
     _voiceButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _voiceButton.adjustsImageWhenHighlighted = NO;
-    _voiceButton.frame = CGRectMake(_topSearchView.width - 35, 0, 35, _topSearchView.height);
+    _voiceButton.frame = CGRectMake(_topSearchView.width - 45, 0, 35, _topSearchView.height);
     [_voiceButton addTarget:self action:@selector(voiceButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [_voiceButton setImage:[UIImage imageNamed:@"icon_voice_search"] forState:0];
     [_topSearchView addSubview:_voiceButton];
@@ -162,7 +162,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
         cell.subItem = _mainItem[indexPath.section].goods[indexPath.row];
         gridcell = cell;
     }
-
+    
     return gridcell;
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -170,33 +170,40 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
     UICollectionReusableView *reusableview = nil;
     if (kind == UICollectionElementKindSectionHeader){
         
-        DCBrandsSortHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[DCBrandsSortHeadView reuseIdentifier] forIndexPath:indexPath];
+        DCBrandsSortHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                              withReuseIdentifier:[DCBrandsSortHeadView reuseIdentifier]
+                                                                                     forIndexPath:indexPath];
         headerView.headTitle = _mainItem[indexPath.section];
         reusableview = headerView;
     }
     return reusableview;
 }
 #pragma mark - item宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-        if ([_mainItem[_mainItem.count - 1].title isEqualToString:@"热门品牌"]) {
-            if (indexPath.section == _mainItem.count - 1) {//品牌
-                return CGSizeMake((SCREEN_WIDTH - tableViewH - 6 - DCMargin)/3, 60);
-            }else{//商品
-                return CGSizeMake((SCREEN_WIDTH - tableViewH - 6 - DCMargin)/3, (SCREEN_WIDTH - tableViewH - 6 - DCMargin)/3 + 20);
-            }
-        }else{
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([_mainItem[_mainItem.count - 1].title isEqualToString:@"热门品牌"]) {
+        if (indexPath.section == _mainItem.count - 1) {//品牌
+            return CGSizeMake((SCREEN_WIDTH - tableViewH - 6 - DCMargin)/3, 60);
+        }else{//商品
             return CGSizeMake((SCREEN_WIDTH - tableViewH - 6 - DCMargin)/3, (SCREEN_WIDTH - tableViewH - 6 - DCMargin)/3 + 20);
         }
-    return CGSizeZero;
+    }else{
+        return CGSizeMake((SCREEN_WIDTH - tableViewH - 6 - DCMargin)/3, (SCREEN_WIDTH - tableViewH - 6 - DCMargin)/3 + 20);
+    }
 }
 
 #pragma mark - head宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
     return CGSizeMake(SCREEN_WIDTH, 25);
 }
 
 #pragma mark - foot宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
     return CGSizeZero;
 }
 

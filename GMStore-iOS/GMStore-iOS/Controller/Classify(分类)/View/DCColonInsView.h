@@ -10,7 +10,6 @@
 
 @interface DCColonInsView : UIView
 
-#pragma mark - 初始化
 - (void)setUpUI;
 
 /** 收藏回调 */

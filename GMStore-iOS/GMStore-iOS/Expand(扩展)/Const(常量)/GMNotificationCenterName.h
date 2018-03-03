@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#pragma mark - 项目中所有通知
-
 /** 登录成功选择控制器通知 */
 UIKIT_EXTERN NSString *const LOGINSELECTCENTERINDEX;
 

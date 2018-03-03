@@ -9,14 +9,11 @@
 #import "DCHoverFlowLayout.h"
 
 @interface DCHoverFlowLayout()
-
 @property (nonatomic, assign) CGFloat navHeight;
-
 @end
 
 @implementation DCHoverFlowLayout
 
-#pragma mark - initialize
 - (instancetype)init
 {
     self = [super init];
@@ -58,11 +55,11 @@
     
     //遍历当前屏幕中没有header的section数组
     [noneHeaderSections enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop){
-        
         //取到当前section中第一个item的indexPath
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:idx];
         //获取当前section在正常情况下已经离开屏幕的header结构信息
-        UICollectionViewLayoutAttributes *attributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
+        UICollectionViewLayoutAttributes *attributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                                            atIndexPath:indexPath];
         
         //如果当前分区确实有因为离开屏幕而被系统回收的header
         if (attributes)
@@ -91,8 +88,7 @@
                 //cell有值，则获取第一个cell和最后一个cell的结构信息
                 firstItemAttributes = [self layoutAttributesForItemAtIndexPath:firstItemIndexPath];
                 lastItemAttributes = [self layoutAttributesForItemAtIndexPath:lastItemIndexPath];
-            }else
-            {
+            }else{
                 //cell没值,就新建一个UICollectionViewLayoutAttributes
                 firstItemAttributes = [UICollectionViewLayoutAttributes new];
                 //然后模拟出在当前分区中的唯一一个cell，cell在header的下面，高度为0，还与header隔着可能存在的sectionInset的top
@@ -131,7 +127,6 @@
     
     //转换回不可变数组，并返回
     return [superArray copy];
-    
 }
 
 #pragma mark - 调用layoutAttributesForElementsInRect

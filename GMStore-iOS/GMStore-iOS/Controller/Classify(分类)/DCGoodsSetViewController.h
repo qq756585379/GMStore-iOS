@@ -13,5 +13,4 @@
 /* plist数据 */
 @property (strong , nonatomic)NSString *goodPlisName;
 
-
 @end

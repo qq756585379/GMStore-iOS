@@ -24,7 +24,6 @@ NSString *const SHOWTOPTOOLVIEW = @"SHOWTOPTOOLVIEW";
 /** 隐藏顶部自定义工具条View通知 */
 NSString *const HIDETOPTOOLVIEW = @"HIDETOPTOOLVIEW";
 
-
 /** 商品属性选择返回通知 */
 NSString *const SHOPITEMSELECTBACK = @"SHOPITEMSELECTBACK";
 

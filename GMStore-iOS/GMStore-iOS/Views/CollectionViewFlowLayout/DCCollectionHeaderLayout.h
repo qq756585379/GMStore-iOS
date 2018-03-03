@@ -21,7 +21,6 @@
 
 @interface DCCollectionHeaderLayout : UICollectionViewFlowLayout
 
-
 // item 的行距（默认4.0）
 @property (nonatomic, assign) CGFloat lineSpacing;
 // item 的间距 （默认4.0）
@@ -42,6 +41,5 @@
 @property (nonatomic, copy) UIFont *labelFont;
 
 @property (nonatomic, weak) id<HorizontalCollectionLayoutDelegate> delegate;
-
 
 @end

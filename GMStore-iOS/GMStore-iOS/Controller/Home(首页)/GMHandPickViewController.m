@@ -244,7 +244,10 @@
 }
 
 //这里我为了直观的看出每组的CGSize设置用if 后续我会用简洁的三元表示
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
     if (indexPath.section == 0) {//9宫格组
         return CGSizeMake(SCREEN_WIDTH/5 , SCREEN_WIDTH/5 + DCMargin);
     }
@@ -267,7 +270,8 @@
 }
 
 #pragma mark - head宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
     if (section == 0) {
         return CGSizeMake(SCREEN_WIDTH, 230); //图片滚动的宽高
     }
@@ -278,7 +282,8 @@
 }
 
 #pragma mark - foot宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
     if (section == 0) {
         return CGSizeMake(SCREEN_WIDTH, 180);  //Top头条的宽高
     }

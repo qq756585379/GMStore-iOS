@@ -40,12 +40,12 @@
     
     [_goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self);
-        [make.top.mas_equalTo(self)setOffset:5];
+        [make.top.mas_equalTo(self) setOffset:5];
         make.size.mas_equalTo(CGSizeMake(self.width * 0.85, self.width * 0.85));
     }];
     
     [_goodsTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.top.mas_equalTo(_goodsImageView.mas_bottom)setOffset:5];
+        [make.top.mas_equalTo(_goodsImageView.mas_bottom) setOffset:5];
         make.width.mas_equalTo(_goodsImageView);
         make.centerX.mas_equalTo(self);
     }];

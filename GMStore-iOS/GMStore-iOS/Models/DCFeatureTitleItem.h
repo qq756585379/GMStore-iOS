@@ -13,5 +13,4 @@
 /** 标题名 */
 @property (nonatomic, copy) NSString *attrname;
 
-
 @end

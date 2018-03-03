@@ -55,13 +55,6 @@ static CGFloat _lastContentOffset;
     return nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    if (self.navigationController.navigationBar.barTintColor == YJBGColor)return;
-    self.navigationController.navigationBar.barTintColor = YJBGColor;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -72,10 +65,15 @@ static CGFloat _lastContentOffset;
     [self setUpData];
     
     [self setUpSuspendView];
-
 }
 
-#pragma mark - initialize
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.navigationController.navigationBar.barTintColor == YJBGColor) return;
+    self.navigationController.navigationBar.barTintColor = YJBGColor;
+}
+
 - (void)setUpColl
 {
     // 默认列表视图
@@ -154,6 +152,7 @@ static CGFloat _lastContentOffset;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DCListGridCell *cell = nil;
     cell = (_isSwitchGrid) ? [collectionView dequeueReusableCellWithReuseIdentifier:[DCListGridCell cellReuseIdentifier] forIndexPath:indexPath] : [collectionView dequeueReusableCellWithReuseIdentifier:[DCListGridCell cellReuseIdentifier] forIndexPath:indexPath];
+    
     cell.youSelectItem = _setItem[indexPath.row];
     
     WEAK_SELF
@@ -181,38 +180,48 @@ static CGFloat _lastContentOffset;
     return cell;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    
-    UICollectionReusableView *reusableview = nil;
-    if (kind == UICollectionElementKindSectionHeader){
-        
-        DCCustionHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[DCCustionHeadView reuseIdentifier] forIndexPath:indexPath];
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if (kind == UICollectionElementKindSectionHeader)
+    {
+        DCCustionHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                           withReuseIdentifier:[DCCustionHeadView reuseIdentifier]
+                                                                                  forIndexPath:indexPath];
         WEAK_SELF
         headerView.filtrateClickBlock = ^{//点击了筛选
             [weakSelf filtrateButtonClick];
         };
-        reusableview = headerView;
+        
+        return headerView;
     }
-    return reusableview;
+    
+    return nil;
 }
 
 #pragma mark - item宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
     return (_isSwitchGrid) ? CGSizeMake(SCREEN_WIDTH, 120) : CGSizeMake((SCREEN_WIDTH - 4)/2, (SCREEN_WIDTH - 4)/2 + 60);//列表、网格Cell
 }
 
 #pragma mark - head宽高
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
     return CGSizeMake(SCREEN_WIDTH, 40); //头部
 }
 
 #pragma mark - X间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 4;
 }
 
 #pragma mark - Y间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return (_isSwitchGrid) ? 0 : 4;
 }
 
@@ -242,29 +251,26 @@ static CGFloat _lastContentOffset;
     _lastContentOffset = scrollView.contentOffset.y;
 }
 
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
-{
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
     if(scrollView.contentOffset.y > _lastContentOffset){
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
         self.collectionView.frame = CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT - 20);
         self.view.backgroundColor = [UIColor whiteColor];
     }else{
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-        self.collectionView.frame = CGRectMake(0, DCTopNavH, SCREEN_WIDTH, SCREEN_HEIGHT - DCTopNavH);
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+        self.collectionView.frame = CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NAV_BAR_HEIGHT);
         self.view.backgroundColor = YJBGColor;
     }
 }
 
 #pragma mark - <UIScrollViewDelegate>
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //判断回到顶部按钮是否隐藏
     _backTopButton.hidden = (scrollView.contentOffset.y > SCREEN_HEIGHT) ? NO : YES;
-
     WEAK_SELF
     [UIView animateWithDuration:0.25 animations:^{
-        __strong typeof(weakSelf)strongSelf = weakSelf;
-        strongSelf.footprintButton.y = (strongSelf.backTopButton.hidden == YES) ? SCREEN_HEIGHT - 60 : SCREEN_HEIGHT - 110;
+        STRONG_SELF
+        self.footprintButton.y = (self.backTopButton.hidden == YES) ? SCREEN_HEIGHT - 60 : SCREEN_HEIGHT - 110;
     }];
 }
 
@@ -289,15 +295,12 @@ static CGFloat _lastContentOffset;
 {
     button.selected = !button.selected;
     _isSwitchGrid = !_isSwitchGrid;
-    
     [_colonView removeFromSuperview];
-    
     [self.collectionView reloadData];
 }
 
 #pragma mark - collectionView滚回顶部
-- (void)ScrollToTop
-{
+- (void)ScrollToTop{
     [self.collectionView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 
@@ -314,8 +317,7 @@ static CGFloat _lastContentOffset;
 }
 
 #pragma mark - 点击搜索
-- (void)searchButtonClick
-{
+- (void)searchButtonClick{
     
 }
 
@@ -328,16 +330,11 @@ static CGFloat _lastContentOffset;
     [self xw_presentViewController:vc withAnimator:animator];
     WEAK_SELF
     [animator xw_enableEdgeGestureAndBackTapWithConfig:^{
-        [weakSelf selfAlterViewback];
+        STRONG_SELF
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 
-#pragma 退出界面
-- (void)selfAlterViewback{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - LazyLoad
 - (UICollectionView *)collectionView
 {
     if (!_collectionView) {
@@ -349,8 +346,8 @@ static CGFloat _lastContentOffset;
         _collectionView.dataSource = self;
         
         [_collectionView registerClass:[DCCustionHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[DCCustionHeadView reuseIdentifier]]; //头部View
-        [_collectionView registerClass:[DCSwitchGridCell class] forCellWithReuseIdentifier:[DCSwitchGridCell cellReuseIdentifier]];//cell
-        [_collectionView registerClass:[DCListGridCell class] forCellWithReuseIdentifier:[DCListGridCell cellReuseIdentifier]];//cell
+        [_collectionView registerClass:[DCSwitchGridCell class] forCellWithReuseIdentifier:[DCSwitchGridCell cellReuseIdentifier]];
+        [_collectionView registerClass:[DCListGridCell class] forCellWithReuseIdentifier:[DCListGridCell cellReuseIdentifier]];
         [self.view addSubview:_collectionView];
     }
     return _collectionView;
