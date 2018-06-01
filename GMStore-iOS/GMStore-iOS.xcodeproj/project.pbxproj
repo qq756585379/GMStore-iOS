@@ -1214,16 +1214,16 @@
 		F571FD1F1FFF4ACE002B7E25 /* 自定义Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F571FD251FFF4ACE002B7E25 /* DCDetailShowTypeCell.h */,
 				F571FD201FFF4ACE002B7E25 /* DCDetailShowTypeCell.m */,
-				F571FD211FFF4ACE002B7E25 /* DCShowTypeOneCell.m */,
+				F571FD291FFF4ACE002B7E25 /* DCShowTypeFourCell.h */,
 				F571FD221FFF4ACE002B7E25 /* DCShowTypeFourCell.m */,
+				F571FD261FFF4ACE002B7E25 /* DCShowTypeOneCell.h */,
+				F571FD211FFF4ACE002B7E25 /* DCShowTypeOneCell.m */,
+				F571FD271FFF4ACE002B7E25 /* DCShowTypeThreeCell.h */,
 				F571FD231FFF4ACE002B7E25 /* DCShowTypeThreeCell.m */,
 				F571FD241FFF4ACE002B7E25 /* DCShowTypeTwoCell.h */,
-				F571FD251FFF4ACE002B7E25 /* DCDetailShowTypeCell.h */,
-				F571FD261FFF4ACE002B7E25 /* DCShowTypeOneCell.h */,
-				F571FD271FFF4ACE002B7E25 /* DCShowTypeThreeCell.h */,
 				F571FD281FFF4ACE002B7E25 /* DCShowTypeTwoCell.m */,
-				F571FD291FFF4ACE002B7E25 /* DCShowTypeFourCell.h */,
 			);
 			path = "自定义Cell";
 			sourceTree = "<group>";
@@ -1240,20 +1240,20 @@
 		F571FD2D1FFF4ACE002B7E25 /* 评论Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F571FD2E1FFF4ACE002B7E25 /* DCCommentPicCell.m */,
-				F571FD2F1FFF4ACE002B7E25 /* DCCommentHeaderCell.h */,
+				F571FD351FFF4ACE002B7E25 /* DCCommentCell.h */,
 				F571FD301FFF4ACE002B7E25 /* DCCommentCell.m */,
 				F571FD311FFF4ACE002B7E25 /* DCCommentContentCell.h */,
-				F571FD321FFF4ACE002B7E25 /* DCCommentFooterCell.m */,
-				F571FD331FFF4ACE002B7E25 /* DCPartCommentHeadView.h */,
-				F571FD341FFF4ACE002B7E25 /* DCDetailPartCommentCell.h */,
-				F571FD351FFF4ACE002B7E25 /* DCCommentCell.h */,
 				F571FD361FFF4ACE002B7E25 /* DCCommentContentCell.m */,
+				F571FD391FFF4ACE002B7E25 /* DCCommentFooterCell.h */,
+				F571FD321FFF4ACE002B7E25 /* DCCommentFooterCell.m */,
+				F571FD2F1FFF4ACE002B7E25 /* DCCommentHeaderCell.h */,
 				F571FD371FFF4ACE002B7E25 /* DCCommentHeaderCell.m */,
 				F571FD381FFF4ACE002B7E25 /* DCCommentPicCell.h */,
-				F571FD391FFF4ACE002B7E25 /* DCCommentFooterCell.h */,
-				F571FD3A1FFF4ACE002B7E25 /* DCPartCommentHeadView.m */,
+				F571FD2E1FFF4ACE002B7E25 /* DCCommentPicCell.m */,
+				F571FD341FFF4ACE002B7E25 /* DCDetailPartCommentCell.h */,
 				F571FD3B1FFF4ACE002B7E25 /* DCDetailPartCommentCell.m */,
+				F571FD331FFF4ACE002B7E25 /* DCPartCommentHeadView.h */,
+				F571FD3A1FFF4ACE002B7E25 /* DCPartCommentHeadView.m */,
 			);
 			path = "评论Cell";
 			sourceTree = "<group>";

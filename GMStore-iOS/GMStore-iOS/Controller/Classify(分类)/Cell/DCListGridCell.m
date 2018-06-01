@@ -84,14 +84,14 @@
     }];
     
     [_autotrophyImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.left.mas_equalTo(_gridImageView.mas_right)setOffset:DCMargin];
+        [make.left.mas_equalTo(_gridImageView.mas_right) setOffset:DCMargin];
         make.top.mas_equalTo(_gridImageView);
     }];
     
     [_gridLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         [make.left.mas_equalTo(_gridImageView.mas_right)setOffset:DCMargin];
         [make.top.mas_equalTo(_gridImageView)setOffset:-3];
-        [make.right.mas_equalTo(self)setOffset:-DCMargin];
+        [make.right.mas_equalTo(self) setOffset:-DCMargin];
     }];
     
     [_freeSuitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -110,7 +110,7 @@
     }];
     
     [_colonButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.right.mas_equalTo(self)setOffset:-DCMargin];
+        [make.right.mas_equalTo(self) setOffset:-DCMargin];
         [make.bottom.mas_equalTo(self)setOffset:-DCMargin];
         make.size.mas_offset(CGSizeMake(22, 15));
     }];

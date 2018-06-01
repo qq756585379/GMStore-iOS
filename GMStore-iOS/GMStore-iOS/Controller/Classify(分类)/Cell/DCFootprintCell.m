@@ -53,13 +53,13 @@
     }];
     
     [_goodName mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.top.mas_equalTo(_goodImageView.mas_bottom)setOffset:5];
+        [make.top.mas_equalTo(_goodImageView.mas_bottom) setOffset:5];
         make.left.mas_equalTo(_goodImageView);
         make.right.mas_equalTo(_goodImageView);
     }];
     
     [_priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.top.mas_equalTo(_goodName.mas_bottom)setOffset:5];
+        [make.top.mas_equalTo(_goodName.mas_bottom) setOffset:5];
         make.left.mas_equalTo(_goodImageView);
         make.right.mas_equalTo(_goodImageView);
     }];

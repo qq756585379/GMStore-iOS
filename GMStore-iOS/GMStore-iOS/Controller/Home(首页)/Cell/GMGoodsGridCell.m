@@ -66,7 +66,7 @@
     _gridItem = gridItem;
     _gridLabel.text = gridItem.gridTitle;
     _tagLabel.text = gridItem.gridTag;
-    _tagLabel.textColor = [UIColor colorWithHexString:gridItem.gridColor];
+    _tagLabel.textColor = [YJColor colorWithHexString:gridItem.gridColor];
     [_tagLabel doBorderWidth:1 color:_tagLabel.textColor cornerRadius:5];
     
     if (_gridItem.iconImage.length == 0) return;

@@ -59,8 +59,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 }
 
 #pragma mark - 加载数据
-- (void)setUpData
-{
+- (void)setUpData{
     _titleItem = [DCClassGoodsItem mj_objectArrayWithFilename:@"ClassifyTitles.plist"];
     _mainItem = [DCClassMianItem mj_objectArrayWithFilename:@"ClassiftyGoods01.plist"];
     //默认选择第一行（注意一定要在加载完数据之后）

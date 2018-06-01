@@ -22,7 +22,6 @@ target 'GMStore-iOS' do
     pod 'PureLayout'
     pod 'PPNumberButton'
     
-    
     pod 'YJHomeKit', :path=> '../../YJHomeKit'
 #    pod 'YJHomeKit'
 

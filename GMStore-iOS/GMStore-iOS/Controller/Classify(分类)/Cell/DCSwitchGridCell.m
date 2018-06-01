@@ -75,13 +75,13 @@
     
     [_autotrophyImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         [make.left.mas_equalTo(self)setOffset:DCMargin];
-        [make.top.mas_equalTo(_gridImageView.mas_bottom)setOffset:DCMargin];
+        [make.top.mas_equalTo(_gridImageView.mas_bottom) setOffset:DCMargin];
     }];
     
     [_gridLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self);
         make.centerY.mas_equalTo(_autotrophyImageView);
-        [make.right.mas_equalTo(self)setOffset:-DCMargin];
+        [make.right.mas_equalTo(self) setOffset:-DCMargin];
     }];
     
     [_freeSuitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
